@@ -1,6 +1,5 @@
 import { ThemeProvider } from "next-themes";
 import { Navigation } from "@/components/blocks/Navigation";
-import { Hero } from "@/components/blocks/Hero";
 import { ProjectGrid } from "@/components/blocks/ProjectGrid";
 import { Footer } from "@/components/blocks/Footer";
 
@@ -10,7 +9,6 @@ function App() {
       <div className="flex min-h-screen flex-col">
         <Navigation />
         <main className="flex-1">
-          <Hero />
           <ProjectGrid />
         </main>
         <Footer />

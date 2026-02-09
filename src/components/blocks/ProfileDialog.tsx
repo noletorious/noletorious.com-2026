@@ -1,18 +1,27 @@
 import { motion } from "motion/react";
+import { Contact } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronDown } from "lucide-react";
 import avatarImg from "/media/noel-torres.jpg";
 
-export function Hero() {
+export function ProfileDialog() {
   return (
-    <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        <Card className="w-full max-w-md border-border/40 bg-card/60 backdrop-blur-md">
-          <CardContent className="flex flex-col items-center gap-6 p-8">
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="ghost" size="icon" aria-label="Profile">
+          <Contact className="h-5 w-5" />
+        </Button>
+      </DialogTrigger>
+      <DialogContent className="border-border/40 bg-background/80 backdrop-blur-md sm:max-w-md">
+        <DialogTitle className="sr-only">Profile</DialogTitle>
+        <Card className="border-0 bg-transparent shadow-none">
+          <CardContent className="flex flex-col items-center gap-6 p-6">
             <motion.img
               src={avatarImg}
               alt="Noel Torres"
@@ -22,9 +31,9 @@ export function Hero() {
             />
 
             <div className="text-center">
-              <h1 className="text-2xl font-bold tracking-tight">
+              <h2 className="text-2xl font-bold tracking-tight">
                 Noel Torres
-              </h1>
+              </h2>
               <p className="mt-1 text-muted-foreground">
                 Software Developer & Designer
               </p>
@@ -49,16 +58,8 @@ export function Hero() {
             </div>
           </CardContent>
         </Card>
-      </motion.div>
-
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <ChevronDown className="h-6 w-6 text-muted-foreground" />
-      </motion.div>
-    </section>
+      </DialogContent>
+    </Dialog>
   );
 }
 

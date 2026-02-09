@@ -7,6 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { ProfileDialog } from "@/components/blocks/ProfileDialog";
 import logoSvg from "/media/noletorious-logo.svg";
 
 export function Navigation() {
@@ -15,7 +16,7 @@ export function Navigation() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
-        <div className="w-10" />
+        <ProfileDialog />
 
         <a href="/" className="flex items-center" aria-label="Home">
           <img

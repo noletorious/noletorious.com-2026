@@ -1,6 +1,6 @@
 export function ProjectGrid() {
   return (
-    <section className="mx-auto max-w-5xl px-6 py-24">
+    <section className="mx-auto max-w-5xl px-6 pt-24 pb-24">
       <h2 className="mb-12 text-xl font-semibold tracking-tight">Projects</h2>
       <div className="grid gap-6 sm:grid-cols-2">
         {[1, 2, 3, 4].map((i) => (
