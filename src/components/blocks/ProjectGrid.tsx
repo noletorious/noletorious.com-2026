@@ -1,22 +1,88 @@
+import { ProjectCard } from "./ProjectCard";
+
+interface Project {
+  name: string;
+  src: string;
+  url: string;
+  logo?: string;
+  description?: string;
+  isPlaceholder: boolean;
+}
+
+const legacyProjects: Project[] = [
+  {
+    name: "TriMet",
+    src: "/trimet/v1/trimet-front.jpg",
+    url: "/trimet",
+    logo: "/logos/rosette.svg",
+    isPlaceholder: false,
+  },
+  {
+    name: "Hop FastPass",
+    src: "/hop/hop-tap.jpg",
+    url: "/hop",
+    logo: "/logos/hop-fastpass-circle.svg",
+    isPlaceholder: false,
+  },
+  {
+    name: "Arrivals Case Study",
+    src: "/arrivals/arrivals-xd-screenshot.jpg",
+    url: "/trimet/arrivals",
+    logo: "/logos/rosette-inner.svg",
+    isPlaceholder: false,
+  },
+];
+
+const newProjects: Project[] = [
+  {
+    name: "LineageBuilder",
+    src: "/logos/rosette.svg", // Placeholder image
+    url: "#",
+    description: "An interactive genealogy and family tree builder. Map your ancestry with a modern interface.",
+    isPlaceholder: true,
+  },
+  {
+    name: "AgileStart",
+    src: "/logos/rosette.svg", // Placeholder image
+    url: "#",
+    description: "A comprehensive project management tool designed to bootstrap agile teams effortlessly.",
+    isPlaceholder: true,
+  },
+  {
+    name: "Habitualize",
+    src: "/logos/rosette.svg", // Placeholder image
+    url: "#",
+    description: "A habit tracking application focused on building consistent routines through gamification.",
+    isPlaceholder: true,
+  },
+  {
+    name: "TrulyWritten",
+    src: "/logos/rosette.svg", // Placeholder image
+    url: "#",
+    description: "A platform for authentic story sharing, helping writers publish verified, human-written content.",
+    isPlaceholder: true,
+  },
+];
+
+const allProjects = [...legacyProjects, ...newProjects];
+
 export function ProjectGrid() {
   return (
-    <section className="mx-auto max-w-5xl px-6 pt-24 pb-24">
-      <h2 className="mb-12 text-xl font-semibold tracking-tight">Projects</h2>
+    <div className="py-8">
+      <h2 className="mb-8 text-2xl font-bold tracking-tight">Selected Work</h2>
       <div className="grid gap-6 sm:grid-cols-2">
-        {[1, 2, 3, 4].map((i) => (
-          <div
-            key={i}
-            className="rounded-lg border border-border/40 bg-card/40 p-6 backdrop-blur-sm"
-          >
-            <div className="mb-4 h-40 rounded-md bg-muted" />
-            <div className="h-4 w-2/3 rounded bg-muted" />
-            <div className="mt-2 h-3 w-1/2 rounded bg-muted" />
-          </div>
+        {allProjects.map((project, idx) => (
+          <ProjectCard
+            key={idx}
+            name={project.name}
+            imageSrc={project.src}
+            url={project.url}
+            logoSrc={project.logo}
+            description={project.description}
+            isPlaceholder={project.isPlaceholder}
+          />
         ))}
       </div>
-      <p className="mt-8 text-center text-sm text-muted-foreground">
-        Projects powered by Sanity CMS — coming soon.
-      </p>
-    </section>
+    </div>
   );
 }

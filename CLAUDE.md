@@ -1,6 +1,6 @@
 # Portfolio 2026 — noletorious.com
 
-Minimalist, high-contrast developer portfolio. Glassmorphism, spring-physics animations, premium typography.
+Minimalist, high-contrast developer portfolio that is inspired by terminal colors. Also add Glassmorphism, spring-physics animations, premium typography.
 
 ## Quick Reference
 
