@@ -62,6 +62,13 @@ const newProjects: Project[] = [
     description: "A platform for authentic story sharing, helping writers publish verified, human-written content.",
     isPlaceholder: true,
   },
+  {
+    name: "Uncle Sigma",
+    src: "/logos/rosette.svg", // Placeholder image (same pattern as other placeholders)
+    url: "#",
+    description: "A clothing line.",
+    isPlaceholder: true,
+  },
 ];
 
 const allProjects = [...legacyProjects, ...newProjects];
